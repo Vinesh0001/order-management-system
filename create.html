@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <title>Order Management System</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div id="bootstrap"></div>
+    <div id="header"></div>
+    <div class="common-content-style">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <br>
+                    <h1>Create Order</h1>
+                    <form action="javascript:void(0)" onsubmit="createOrder()" id="form">
+                        <div class="mb-3">
+                          <label for="id" class="form-label" >Order ID</label>
+                          <input type="text" class="form-control" id="id" required disabled>
+                          <div class="form-text">Order ID should be unique</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required accept="image/png, image/gif, image/jpeg, image/heiv, image/jpg">
+                          </div>
+                          <div class="mb-3">
+                            <label for="image" class="form-label">Order Image</label>
+                            <input type="file" class="form-control" id="image" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="desc" class="form-label">Order Description</label>
+                            <textarea type="text" class="form-control" id="desc" required minlength="10"></textarea>
+                        </div>                        
+                        <button type="submit" class="btn btn-primary" >Submit</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div id="footer"></div>
+    <script>
+      id = getRandom();
+        function getRandom() {
+        var randno = Math.floor(Math.random()*(199999999-111111111));
+        var x = document.getElementById("id").value = randno;
+        };
+    </script>
+</body>
+</html>

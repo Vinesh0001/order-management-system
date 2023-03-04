@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <title>Order Management System</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+    <div id="bootstrap"></div>
+    <div id="header"></div>
+    <div class="common-content-style">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Update Order</h1>
+                    <button onclick="getAllOrdersForUpdate()" type="button" class="btn btn-primary">Get Orders</button>
+                
+                    <div id="not-found"></div>
+                    <div class="row" id="delete-order-parent">
+                        <table class="table table-striped table-bordered ">
+                            <thead>
+                              <tr class="table-primary">
+                                <th scope="col">Order Id</th>
+                                <th scope="col">Order Name</th>
+                                <th scope="col">Order Description</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Delete</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tbody">                              
+                            </tbody>
+                          </table>
+                          <!-- modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Update Order</h5>
+                                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="javascript:void(0)" onsubmit="updateOrder()" id="form">
+                                        <div class="mb-3">
+                                          <label for="id" class="form-label" >Order ID</label>
+                                          <input type="text" class="form-control" id="id" required disabled readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name</label>
+                                            <input type="text" class="form-control" id="name" accept="image/png, image/gif, image/jpeg, image/heiv, image/jpg">
+                                            
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="image" class="form-label">Order Image</label>
+                                            <input type="file" onchange="updatePreviewImage()" class="form-control" id="image" >
+                                            <img id="preview" width="100%" height="200%"/>
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="desc" class="form-label">Order Description</label>
+                                            <textarea type="text" class="form-control" id="desc" required minlength="10"></textarea>
+                                        </div>                        
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close">Close</button>
+                                            <button type="submit" class="btn btn-primary">Update</button>
+                                        </div>
+                                      </form>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
